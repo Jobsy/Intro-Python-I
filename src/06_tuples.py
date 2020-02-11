@@ -43,5 +43,6 @@ def print_tuple(param):
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
 # Declare a tuple of 1 element then print it
+# u = (1,) --> by adding comma with the square bracket also works
 u = (1)  # What needs to be added to make this work?
 print_tuple(u)
