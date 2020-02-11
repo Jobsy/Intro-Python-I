@@ -24,9 +24,28 @@ optional, as this is a common convention in documentation.
 
 This would mean that from the command line you would call `python3 14_cal.py 4 2015` to 
 print out a calendar for April in 2015, but if you omit either the year or both values, 
-it should use today’s date to get the month and year.
+it should use todays date to get the month and year.
 """
 
 import sys
 import calendar
 from datetime import datetime
+
+try:
+    value = input("Enter year(e.g 2015) and month(e.g 5) separeted by comma: ")
+except SyntaxError:
+    value = None
+
+x = datetime.now()
+
+def user_calender():
+  if value is None:
+    print(calendar.month(x.year, int(x.strftime("%m"))))
+  elif type(value) is int and value <= 12:
+    print(calendar.month(x.year, value))
+  elif type(value)!= int and value[0] < 2999 and value[1] <= 12:
+    print(calendar.month(value[0], value[1]))
+  else:
+    print("invalid input")
+
+user_calender()
